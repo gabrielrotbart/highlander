@@ -1,6 +1,7 @@
 require 'twitter'
 require 'net/http'
 require 'ostruct'
+require 'pry'
 
 class TwitterIntegration < Thor
 
@@ -49,10 +50,12 @@ class TwitterIntegration < Thor
   def tweets
     (twitter_client.mentions_timeline || []).collect do |status|
       {
-        tweet_id: status.id,
-        text: status.text,
-        twitter_username: status.user.screen_name,
-        followers_count: status.user.followers_count,
+        tweet_id:          status.id,
+        text:              status.text,
+        twitter_username:  status.user.screen_name,
+        followers_count:   status.user.followers_count,
+        profile_image_url: status.profile_image_url,
+        name:              status.name
       }.to_json
     end
   end

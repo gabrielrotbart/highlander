@@ -3,7 +3,11 @@ module PayloadAdapters
   class TwitterMention < Base
 
     def user
-      @user ||= Services::Twitter.find_by_username(twitter_username).try(:user)
+      @user ||= begin
+        Services::Twitter.find_or_initialize_by_username(twitter_username).tap do |user|
+          user.
+        end
+      end
     end
 
     def tweet_id
