@@ -21,8 +21,8 @@ end
   bounty_name = bounties.sample
   created_at = Time.zone.now - (rand(21)+1).days
 
-  bounty_params = { name:          "#{bounty_name} hunt #{user.name} (#{count})",
-                    description:   "Hunt down #{bounty_name}, #{user.name} (#{count})",
+  bounty_params = { name:          "#{user.name} hunt #{bounty_name}!",
+                    description:   "Hunt down #{bounty_name}, #{user.name}. For glory!",
                     created_by_id: user.id,
                     created_at:    created_at}
 
