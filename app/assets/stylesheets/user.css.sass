@@ -50,33 +50,31 @@ h2
     margin-bottom: 1em
     position: relative
 
-    img
-      display: block
-      float: left
-      height: 110px
-      margin-right: 10px
-      width: 110px
+  img
+    display: block
+    float: left
+    height: 110px
+    margin-right: 10px
+    width: 110px
 
-    .badge-details
-      h3
-        +nice-font(regular)
-        color: palette(3)
-        line-height: 1em
-        margin: .5em 0 .1em
-      p
-        font-size: 1rem
-        margin: 0 0 1em
-        &.badge-name
-          margin-bottom: 0
+  .badge-details
+    h3
+      +nice-font(regular)
+      color: palette(3)
+      line-height: 1em
+      margin: .5em 0 .1em
+    p
+      font-size: 1rem
+      margin: 0 0 1em
 
-    .achievement-details
-      p
-        font-size: .75em
-        margin: 0 0 .3em
-        &.badge-takeup
-          font-size: .8rem
-          a
-            color: palette(6)
+  .achievement-details
+    p
+      font-size: .75em
+      margin: 0 0 .3em
+    .badge-takeup
+      font-size: .8rem
+    a
+      color: palette(6)
 
 .summary
   background: palette(5, lighten, 65)
@@ -86,29 +84,31 @@ h2
     padding: 0
 
   .metrics
+    margin: .5em .2em 1em 0
     white-space: nowrap
     .value
       +nice-font(black)
       color: palette(5)
+      display: inline-block
       font-size: 1.5rem
+      min-width: 20%
+      text-align: right
     .description
       margin-left: 5px
 
   .scores
     +clearfix
     border-radius: $radius
-    margin: 0 0 1em
-    padding: 1em 0 0 0
+    border: 1px solid palette(5, lighten, 50)
+    margin: .5em .2em 2em 0
 
     li
-      clear: both
       float: left
-      line-height: 2em
-
-    .total-score, .total-badges, .running-score
-      font-size: .9rem
-      span
-        font-size: 2.3rem
+      padding: .5em 1em
+      text-align: center
+      width: 50%
+      &:first-child
+        border-right: 1px solid palette(5, lighten, 50)
 
 
 // =================================================

@@ -26,20 +26,19 @@
   <ul class="scores">
     <li class="running-score"><span><%= @user.running_score %></span> Running</li>
     <li class="total-score"><span><%= @user.total_score %></span> All-time</li>
-    <li class="total-badges"><span><%= @user.badge_count %></span> Badges</li>
   </ul>
 
   <h2>Breakdown</h2>
 
   <ul class="metrics">
     <%- @user.metric_totals.each do |metric_total| %>
-      <li class="<%= metric_total.description %>">
+      <li class="<%= metric_total.description.parameterize %>">
         <%
           # TODO: We can provide point line items too using metric_total.event_total_value
           # e.g. 20 points for 2 twitter mentions
         %>
-         <span class="value"><strong><%= metric_total.event_total_count %></strong></span>
-         <span class="description"><%= metric_total.description %></span>
+         <span class="value"><%= metric_total.event_total_count %></span>
+         <span class="description"><%= metric_total.description.titleize.pluralize %></span>
       </li>
     <%- end %>
   </ul>
@@ -49,7 +48,7 @@
 
 <section class="badges main-column">
 
-  <h2>Badges</h2>
+  <h2>Badges <strong>(<%= @user.badge_count %>)</strong></h2>
 
   <p class="badge-spiel">
     <%= @user.first_name %> has unlocked the following
