@@ -7,6 +7,11 @@
     <div class="container">
       <h2>Highlander turns work into a game. Be awesome, earn badges and become the leader!</h2>
     </div>
+
+    <%- unless @latest_bounties.empty? %>
+      <%= render partial: 'latest_bounties', locals: { bounties: @latest_bounties, type: 'unclaimed' } %>
+    <%- end %>
+
   </div>
 <%- end -%>
 

@@ -1,0 +1,10 @@
+<%# once this is done, hero need to be bigger %>
+
+<div class="latest-bounties container">
+  <h3> Claim a bounty! The latest and greatest: </h3>
+  <ul>
+    <% bounties.each do |bounty| %>
+      <li><div class="bounty-button"><%= bounty.name %></div>
+    <% end %>
+  </ul>
+</div>

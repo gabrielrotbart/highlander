@@ -1,2 +1,33 @@
+/* I dont think I should import whatever application imports but not sure why it cant find the mixins*/
+
+@import "utils"
+@import "common/widgets"
+@import "common/**/*"
+
 #main-container
   margin-top: -182px
+
+.latest-bounties
+  margin-top: 40px
+  background: palette(2, lighten, 2, true)
+
+  ul
+    +clearfix
+    list-style: none
+
+  li
+    float: left
+    height: 45px
+    line-height: 45px
+    width: 250px
+    margin: 0 2em
+
+    .bounty-button
+      +hl-button
+      overflow: hidden
+      $palette-cheat-color: darken(palette(2) + palette(2),25)
+      background: $palette-cheat-color
+      &:hover
+        background: lighten($palette-cheat-color,15)
+
+
