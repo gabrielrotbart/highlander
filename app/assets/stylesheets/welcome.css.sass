@@ -28,12 +28,21 @@
     width: 250px
     margin: 0 2em
 
-    .bounty-button
+    a
       +hl-button
+      color: white
+      width: 100%
       overflow: hidden
       $palette-cheat-color: darken(palette(2) + palette(2),25)
       background: $palette-cheat-color
       &:hover
         background: lighten($palette-cheat-color,15)
+
++media($phone)
+  .latest-bounties
+    width: 0px
+    height: 0px
+    display: none
+
 
 

@@ -4,7 +4,7 @@
   <h3> Claim a bounty! The latest and greatest: </h3>
   <ul>
     <% bounties.each do |bounty| %>
-      <li><div class="bounty-button"><%= bounty.name %></div>
+      <li><div class="bounty-button"><%= link_to bounty.name, bounty_path(bounty) %></div>
     <% end %>
   </ul>
 </div>
