@@ -35,5 +35,7 @@
   <%= @bounty.claimed_at %>
 </p>
 
-<%= link_to 'Edit', edit_bounty_path(@bounty) %> |
+<%- if can? :edit, @bounty %>
+  <%= link_to 'Edit', edit_bounty_path(@bounty) %>
+<%- end %> |
 <%= link_to 'Back', bounties_path %>

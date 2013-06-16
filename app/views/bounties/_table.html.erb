@@ -19,7 +19,7 @@
       <tr>
         <td>
           <%- if can? :show, Bounty %>
-            <%= link_to bounty.description, bounty.slug %>
+            <%= link_to bounty.description, bounty_path(bounty) %>
           <%- else %>
             <%= bounty.description %>
           <%- end %>
